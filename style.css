@@ -247,7 +247,6 @@ h1{
 }
 
 
-
 /* Housing list*/
 
 
@@ -268,15 +267,15 @@ h1{
 
 .housing-popular{
     flex-basis: 6%;
-}
+} 
 
-.housing-list div{
+.housing-list a{
     flex-basis: 25%;
     cursor: pointer;
     transition: 0.2s;
 }
 
-.housing-list div:hover{
+.housing-list a:hover{
     transform: scale(1.01);
 }
 
@@ -474,7 +473,7 @@ article{
     width: 23%;
 }
 
-.activities div{
+.activities a{
     border-radius: 1rem 1rem 1rem 1rem;
     cursor: pointer;
     transition: 0.2s;
@@ -507,7 +506,7 @@ article{
     margin-block: auto;
 }
 
-.activities div:hover{
+.activities a:hover{
     transform: scale(1.01);
 }
 
@@ -521,7 +520,7 @@ article{
         margin-bottom: 2rem;
     }    
     
-    .activities div{
+    .activities a{
         width: 100%;
         height: 16rem;
     }
@@ -543,7 +542,7 @@ article{
         margin-bottom: 2rem;
     }    
     
-    .activities div{
+    .activities a{
         width: 100%;
         height: 16rem;
     }
