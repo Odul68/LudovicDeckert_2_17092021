@@ -29,7 +29,7 @@ nav {
 
 nav a{
     padding: 2rem 3rem 2rem 3rem;
-    border-top: 3px solid transparent;
+    border-top: 3px solid transparent; /* Text not moving when hover*/
 }
 
 nav a:hover{
@@ -53,7 +53,7 @@ nav a:hover{
 }
 
 
-/* Media Queries - Header*/
+/* Media Queries - Header : Menu elements go under when less thatn 768px */
 
 
 @media (max-width:768px) {
@@ -97,7 +97,7 @@ h1{
     border: 1px solid #F2F2F2;
     border-radius: 1rem 1rem 1rem 1rem;
     max-width: fit-content;
-    max-width: -moz-fit-content;
+    max-width: -moz-fit-content; /* for firefox */
 }
 
 #location-icon{
@@ -134,7 +134,7 @@ h1{
     transition: transform 200ms;
 }
 
-.search-intro button:hover{
+.search-intro button:hover{ /* button gets bigger */
     transform: scale(1.02);
 }
 
@@ -173,7 +173,7 @@ h1{
 }
 
 @media (max-width:430px){
-    .search-intro input{
+    .search-intro input{ /* To keep the placeholder from shrinking*/
         padding-right: 0;
     }
 }
@@ -188,6 +188,7 @@ h1{
     gap: 0.5rem 2rem;
     flex-wrap: wrap;
     margin-top: 1.8rem;
+    justify-content: flex-start;
 }
 
 .filter{
@@ -198,7 +199,7 @@ h1{
     transition: 0.2s;
 }
 
-.filter:hover{
+.filter:hover{ /* filter gets bigger + shadow */
     transform: scale(1.02);
     box-shadow: 0.2rem 0.2rem 0.4rem #F2F2F2;
     background-color: #f8f7f7;
@@ -243,11 +244,11 @@ h1{
 
 @media (max-width:768px){
     .filters-menu{
-        padding: 0 2rem;
+        padding: 0 2rem; /* Keep padding cause removed for the Housing section when under 768px */
     }
 
     .filters-menu h1{
-        margin-right: 3rem;
+        margin-right: 3rem; /* To get all the filters under the title */
     }
 }
 
@@ -261,6 +262,12 @@ h1{
 }
 
 #housing > div{
+    background: #F2F2F2;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+aside{
     background: #F2F2F2;
     padding: 2rem;
     border-radius: 1rem;
@@ -280,7 +287,7 @@ h1{
     transition: 0.2s;
 }
 
-.housing-list a:hover{
+.housing-list a:hover{ /* card gets bigger */
     transform: scale(1.01);
 }
 
@@ -311,7 +318,7 @@ h1{
     padding: 0.5rem;
     box-shadow: 0.1rem 0.1rem 0.4rem lightgrey;
     flex-grow: 1;
-    min-width: 16rem;
+    min-width: 16rem; /* minimum for the picture to keep go proportions */
 }
 
 .housing-card img{
@@ -334,6 +341,10 @@ h1{
     margin-left: 2rem;
 }
 
+
+/* Aside - popular housing */
+
+
 .popular-housing-card{
     display: flex;
     background-color: white;
@@ -344,7 +355,7 @@ h1{
     transition: 0.2s;
 }
 
-.popular-housing-card:hover{
+.popular-housing-card:hover{ /* card gets bigger */
     transform: scale(1.01);
 }
 
@@ -354,7 +365,7 @@ h1{
     height: 9rem;
     width: 50%;
     object-fit: cover;
-    flex-shrink: 0;
+    flex-shrink: 0; /* To keep good image ratio */
 }
 
 .popular-card-text{
@@ -369,10 +380,10 @@ h1{
 }
 
 .popular-card-text .stars{
-    margin-top: auto;
+    margin-top: auto; /* Separate stars from text */
 }
 
-.housing-all-popular h2{
+.housing-all-popular h2{ /* Includes icon */
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
@@ -380,10 +391,10 @@ h1{
 }
 
 
-/* Media Queries Housing*/
+/* Media Queries Housing : aside - popular goes on top, column direction */
  
 
-@media (max-width:1440px){
+@media (max-width:1440px){ 
     #housing{
         flex-direction: column;
     }
@@ -421,13 +432,13 @@ h1{
         gap: 1rem;
     }
 
-    .popular-housing-card img{
+    .popular-housing-card img{ /* Increased height to keep ratio with the longer width */
         height: 12rem;
     }
    
 }
 
-@media (max-width:768px) {
+@media (max-width:768px) { /* Removed padding to use the full screen for the card */
     #housing{
         flex-direction: column;
     }
@@ -443,18 +454,19 @@ h1{
     .main-page{
         padding: 0;
     }
+
 } 
 
 
-/* Activities*/
+/* Activities - 3 different sizes of cards */
 
 
-article{
+#activities-all{
     margin-top: 4rem;
 }
 
 .activities{
-    height: 600px;
+    height: 600px; /* Forcing the cards to flex - can't be too high */
     display: flex;
     flex-flow: column wrap;
     gap: 2rem;
@@ -508,15 +520,15 @@ article{
 .activities h3{
     padding: 0.3rem 0.2rem 0.2rem 0.8rem;
     display: flex;
-    margin-block: auto;
+    margin-block: auto; /* central position of the text */
 }
 
-.activities a:hover{
+.activities a:hover{ /* card gets bigger */
     transform: scale(1.01);
 }
 
 
-/* Media Queries Activities*/
+/* Media Queries Activities - Column direction by removing the height value */
 
 
 @media (max-width:1024px) {
@@ -555,10 +567,11 @@ article{
     .activities img{
         height: 75%;
     }
-    
-    article{
-        padding: 0 2rem;
+
+    #activities-all{
+        margin: 0 2rem;
     }
+  
 }
 
 
@@ -574,7 +587,7 @@ footer{
 }
 
 footer div{
-    margin-right: auto;
+    margin-right: auto; /* Space between them */
 }
 
 footer a{
@@ -582,7 +595,7 @@ footer a{
     padding: 0.4rem 0;
 }
 
-@media (max-width:768px){
+@media (max-width:768px){ /* Column direction when under 768px */
     footer{
         flex-direction: column;
     }
